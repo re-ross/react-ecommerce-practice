@@ -1,28 +1,32 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
 import Product from "./product/Product";
+import useStyles from "./styles";
+
 const products = [
   {
     id: 1,
-    name: "Shoes",
-    description: "Running Shoes",
-    price: "$100",
+    name: "shoes",
+    description: "running Shoes",
+    price: "$1",
     image:
-      "https://s7d4.scene7.com/is/image/WolverineWorldWide/S20688-45_1?wid=826&hei=685&resMode=bilin&op_usm=0.5,1.0,8,0&iccEmbed=0&printRes=72",
+      "https://www.rei.com/dam/content_team_010818_52427_htc_running_shoes_hero2_lg.jpg",
   },
   {
     id: 2,
-    name: "Macbook",
-    description: "Macbook",
-    price: "$500",
+    name: "macbook",
+    description: "computer",
+    price: "$10",
     image:
-      "https://www.bhphotovideo.com/cdn-cgi/image/format=auto,fit=scale-down,width=500,quality=95/https://www.bhphotovideo.com/images/images500x500/apple_mbp_14_sg_04_14_2_macbook_pro_with_1634580931_1668205.jpg",
+      "https://www.mobigyaan.com/wp-content/uploads/2020/03/Apple-Macbook-Air-2020-1.jpg",
   },
 ];
 
 const Products = () => {
+  const classes = useStyles();
   return (
-    <main>
+    <main className={classes.content}>
+      <div className={classes.toolbar} />
       <Grid container justifyContent="center" spacing={4}>
         {products.map((product) => (
           <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
